@@ -34,3 +34,10 @@ nosetests.xml
 .mr.developer.cfg
 .project
 .pydevproject
+
+# Geany
+*.geany
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace

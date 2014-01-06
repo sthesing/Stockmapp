@@ -1,0 +1,24 @@
+{
+    "stockmapp_collection": 
+    {
+        "name":"Example Collection",
+        "desc":"Optional description of the collection",
+        "items": [
+        {
+            "id": "item_no_1",
+            "container": "container_x",
+            "tags": ["tag1", "tag2"]
+        },
+        {
+            "id": "item_no_2",
+            "container": "container_x",
+            "tags": ["tag1", "tag3"]
+        },
+        {
+            "id": "item_no_3",
+            "container": "container_y",
+            "tags": ["tag2", "tag3"]
+        }
+        ]
+    }
+}
