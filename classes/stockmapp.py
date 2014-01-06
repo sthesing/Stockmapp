@@ -47,7 +47,7 @@ class Stockmapp:
             print "If you want to generate one, use setup.py!"
             sys.exit(e)
         
-        # Use only what is inside "fism_settings"
+        # Use only what is inside "stockmapp_settings"
         try:
             settings = settings['stockmapp_settings']
         except KeyError, e:
@@ -59,10 +59,10 @@ class Stockmapp:
             print "If you want to generate one, use setup.py!"
             sys.exit()
 
-    def load_collection(filename):
+    def load_collection(self, filename):
         try:
             f = open(filename, 'r')
-            return json.loads(f.read())
+            return json.loads(f.read())['stockmapp_collection']
             f.close()
         except IOError, e:
             print "## Error ##"
@@ -74,3 +74,11 @@ class Stockmapp:
             print "There is a problem with your collection file."
             print "Please fix it and retry."
             sys.exit(e)
+    
+    def add_item(self, collection, item_id, container='None', tags=[]):
+        collection['items'].add({'container': container,
+                                 'id': item_id,
+                                 'tags': tags})
+        
+            
+

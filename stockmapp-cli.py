@@ -55,3 +55,7 @@ if __name__ == "__main__":
     
     # Init ia Stockmapp with the settings
     stockmapp = Stockmapp(args.settings)
+    collection = stockmapp.load_collection(args.collection)
+    items = collection['items']
+    
+    print items

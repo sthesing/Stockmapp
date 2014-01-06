@@ -18,6 +18,11 @@
             "id": "item_no_3",
             "container": "container_y",
             "tags": ["tag2", "tag3"]
+        },
+        {
+            "id": "item_no_4",
+            "container": "container_z",
+            "tags": ["tag1", {"length":"200"}, "tag2"]
         }
         ]
     }
