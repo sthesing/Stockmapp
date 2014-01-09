@@ -21,7 +21,9 @@ class Item:
     Item represents an arbitrary item that can be checked into and out 
     of containers.
     """
+    #TODO I probably don't need this class
+    
     def __init__(self, id, container, tags):
-		self.id 		= id
-		self.container 	= container
-		self.tags		= tags
+        self.id         = id
+        self.container  = container
+        self.tags       = tags

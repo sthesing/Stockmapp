@@ -18,6 +18,7 @@
 
 import sys
 import json
+from qrtools import QR
 
 class Stockmapp:
     """
@@ -60,6 +61,7 @@ class Stockmapp:
             sys.exit()
 
     def load_collection(self, filename):
+        """Loads a collection from JSON and returns it as a dict."""
         try:
             f = open(filename, 'r')
             return json.loads(f.read())['stockmapp_collection']
@@ -76,9 +78,13 @@ class Stockmapp:
             sys.exit(e)
     
     def add_item(self, collection, item_id, container='None', tags=[]):
-        collection['items'].add({'container': container,
+        """Adds an item to a collection."""
+        collection['items'].append({'container': container,
                                  'id': item_id,
                                  'tags': tags})
-        
-            
-
+    
+    def scan_qr(self):
+        """Scans a QR-Code and returns the data as a string"""
+        qr = QR()
+        qr.decode_webcam()
+        return str(qr.data)         

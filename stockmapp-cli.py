@@ -18,14 +18,15 @@
 ##along with Stockmapp. If not, see http://www.gnu.org/licenses/.
 
 __author__ = "Stefan Thesing <software@webdings.de>"
-__version__ = "0.1.0"
-__date__ = "Date: 2014/01/06"
+__version__ = "0.1.1alpha"
+__date__ = "Date: 2014/01/09"
 __copyright__ = "Copyright (c) 2014 Stefan Thesing"
 __license__ = "GPL"
 
 import sys
 import argparse
 from classes.stockmapp import Stockmapp
+from qrtools import QR
 
 if __name__ == "__main__":
     """
@@ -56,6 +57,7 @@ if __name__ == "__main__":
     # Init ia Stockmapp with the settings
     stockmapp = Stockmapp(args.settings)
     collection = stockmapp.load_collection(args.collection)
-    items = collection['items']
     
-    print items
+    # Let's see if we can add an item by fetching the ID by scanning a QR code
+    stockmapp.add_item(collection, stockmapp.scan_qr(), container="another container", tags=["gescannt", "obswohlklappt?"])
+    print collection['items']
